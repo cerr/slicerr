@@ -1,6 +1,6 @@
 #add following lines to user's $HOME/.slicerrc.py slicer startup file
 import os
-octavepath = 'C:/Octave/Octave-5.2.0/mingw64/bin/octave-cli.exe'
+octavepath = 'C:/Program Files/GNU Octave/Octave-6.2.0/mingw64/bin/octave-cli.exe'
 os.environ['OCTAVE_EXECUTABLE'] = octavepath
 os.environ['PATH'] = octavepath + ';' + os.environ['PATH']
 
@@ -11,7 +11,7 @@ import numpy as np
 #Get volume node from MRML scene
 volumeNode = slicer.util.getNode('*CT*')
 #or
-volumeNode = slicer.app.layoutManager().sliceWidget("Red").sliceLogic().GetBackgroundLayer().GetVolumeNode()
+#volumeNode = slicer.app.layoutManager().sliceWidget("Red").sliceLogic().GetBackgroundLayer().GetVolumeNode()
 
 #Get 3x3 voxel matrix from volume node
 imgVolume = np.copy(slicer.util.arrayFromVolume(volumeNode))
